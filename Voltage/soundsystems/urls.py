@@ -13,7 +13,7 @@ urlpatterns = [
       path('sound_admin_control/<id>',views.sound_delete,name = 'sound_delete'),
       path('sound_admin_upload',views.sound_insert,name = 'sound_insert'),
       path('sound_userview/<id>',views.sound_reservation_add,name = 'sound_reservation_add'),
-     
+      path('sound_reservation',views.bookSoundPackages,name = 'bookSoundPackages'),
       
       
      
