@@ -19,8 +19,8 @@ def sound_insert(request):
                 mydata.Suitable_for = request.POST.get('suitable')
                 mydata.Brand = request.POST.get('brand')
                 mydata.Price = request.POST.get('price')
-                #mydata.packageImg = request.FILES.get('packageImg')
-               
+                mydata.packageImg = request.FILES.get('packageImg')
+          
                 mydata.save()
                 messages.success(request, 'Package Data Saved Successfully')
 
@@ -98,6 +98,11 @@ def sound_delete(request, id):
 
 
 
+def sound_reservation_add(request,id):
+     
+     sound = sound_admin.objects.filter(id=id)
+     return render(request,"sound_reservation.html",{"soundsystem":sound})
+
 
 def bookSoundPackages(request):
  if request.method == 'POST':
@@ -138,7 +143,7 @@ def bookSoundPackages(request):
 
 
  
-
+   
 
 
 

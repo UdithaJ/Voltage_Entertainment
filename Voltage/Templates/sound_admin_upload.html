@@ -22,12 +22,88 @@
 
 		.upload{
 
-				top: 300px;
-					left: 150px;
-					position:absolute;
+			top: 100px;
+			left: 150px;
+			position:absolute;
 
 
 		}
+
+
+		.packname{
+
+			position: absolute;
+    		top:500px;
+    		right: 650px;
+			width:20%;
+			border: 3px solid red;
+            border-radius: 4px;
+
+		}
+
+		
+		.suitable{
+
+			position: absolute;
+    		top:600px;
+    		right: 650px;
+			width:20%;
+			border: 3px solid red;
+            border-radius: 4px;
+
+		}
+
+
+		.brand{
+
+			position: absolute;
+    		top:700px;
+    		right: 650px;
+			width:20%;
+			border: 3px solid red;
+            border-radius: 4px;
+
+		}
+
+
+
+		.price{
+
+			position: absolute;
+    		top:800px;
+    		right: 650px;
+			width:20%;
+			border: 3px solid red;
+            border-radius: 4px;
+
+		}
+
+		#uploadcanbtn{
+
+			position: absolute;
+    		top:1000px;
+    		right: 950px;
+
+
+		}
+
+
+		#uploadsubbtn{
+
+
+			position: absolute;
+    		top:1000px;
+    		right: 550px;
+
+
+		}
+
+		
+		
+
+
+
+
 
 </style>
 
@@ -98,41 +174,46 @@
 
 
 
-	<h3 class="title">Sound Systems Uploading</h3>
+	<h3 class="title">Sound System Uploading</h3>
 
 
 
 
 
+
+
+
+
+									
+							<!--Image uploader-->
+
+						<div class="uploadimg">
+
+							<div class="container">
+							<div class="col-md-6">
+								<div class="form-group">
+									<label style="color:yellow">Upload Image</label>
+									<div class="input-group">
+										<span class="input-group-btn">
+											<span class="btn btn-default btn-file">
+												Browse… <input type="file" id="imgInp" name="packageImg" onchange="readURL(this);">
+												
+											</span>
+										</span>
+										<input type="text" class="form-control" readonly>
+									</div>
+									<img id='img-upload'/>
+								</div>
+							</div>
+							</div>
+
+							</div>
+						</div>
+						
+							<!--/Image uploader-->
 
     
 
-		<!--Image uploader-->
-
-	<div class="uploadimg">
-
-		<div class="container">
-		<div class="col-md-6">
-			<div class="form-group">
-				<label style="color:red">Upload Image</label>
-				<div class="input-group">
-					<span class="input-group-btn">
-						<span class="btn btn-default btn-file">
-							Browse… <input type="file" id="imgInp" name="packageImg" onchange="readURL(this);">
-							
-						</span>
-					</span>
-					<input type="text" class="form-control" readonly>
-				</div>
-				<img id='img-upload'/>
-			</div>
-		</div>
-		</div>
-
-		</div>
-	</div>
-	
-		<!--/Image uploader-->
 
 
 
@@ -142,6 +223,14 @@
 	
 
 				
+			
+
+	<form method = "POST" enctype = "multipart/form-data">
+		{% csrf_token %}
+
+
+
+
 					<div class="upload">
 
 						<span><i class="fas fa-cloud-upload-alt mr-2"></i>Choose files</span>
@@ -151,35 +240,32 @@
 
 
 
-	<form method = "POST" enctype = "multipart/form-data">
-		{% csrf_token %}
-
 				<div class="packname">
 	
-				<div class="form-group mx-sm-3 mb-2">
+				
 					<label for="" class="sr-only"></label>
-					<input type="text" class="form-control" id="inputPassword2" name="packname" placeholder="Package Name" required>
-				</div>
+					<input type="text" class="form-control" id="inputPassword2" name="packname" placeholder="Package Name"  required>
+				
 
 				</div>
 
 
 					<div class="suitable">
 
-				<div class="form-group mx-sm-3 mb-2">
+			
 					<label for="" class="sr-only"></label>
 					<input type="text" class="form-control" id="inputPassword2" name="suitable" placeholder="Suitable For" required>
-				</div>
+			
 
 				</div>
 
 
 					<div class="brand">
 
-				<div class="form-group mx-sm-3 mb-2">
+			
 					<label for="" class="sr-only"></label>
 					<input type="text" class="form-control" id="inputPassword2" name="brand" placeholder="Brand" required>
-				</div>
+			
 
 				</div>
 
@@ -187,10 +273,10 @@
 			
 				<div class="price">
 
-				<div class="form-group mx-sm-3 mb-2">
+			
 					<label for="" class="sr-only"></label>
 					<input type="text" class="form-control" id="inputPassword2"  name="price" placeholder="Price" required>
-				</div>
+			
 
 				</div>
 
@@ -199,23 +285,24 @@
 				<!--/Add information about the package-->
 
 
-				<div id="uploadsubmitbtn">
+				<div id="uploadcanbtn">
 
-					<input type="reset" value="Reset" >
-					<!--<button input type="submit" class="btn btn-warning">Cancel</button>-->
+					<!--<input type="reset" value="Reset" >-->
+					<button input type="reset" class="btn btn-warning">Cancel</button>
 
 				</div>
 
 
-				<div id="uploadcancelbtn">
+				<div id="uploadsubbtn">
 
-					<input class="myButton" id = "submitinfo" input type="submit" value="SUBMIT" name="submit">
-					<!--<button input type="submit" class="btn btn-warning">Submit</button>-->
+					<!--<input class="myButton" id = "submitinfo" input type="submit" value="SUBMIT" name="submit">-->
+					<button input type="submit" class="btn btn-warning">Submit</button>
 
 				</div>
 
 	</form>
 
+	
 
 
 
