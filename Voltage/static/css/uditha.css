@@ -891,6 +891,17 @@ input[type=email] {
   display:block;
 }
 
+.ComingSoon{
+  position:absolute;
+  top: -60px;
+  left: 0px;
+  color: #9c39c4;
+  font-size: 25px;
+}
+
+.ComingSoon {
+  animation: blinker 1s linear infinite;
+}
   
 #update{
 
@@ -1530,7 +1541,7 @@ font-size: 30px;
 
 .upcoming_panel{
   position:absolute;
-  top:200px;
+  top:220px;
   left:900px;
   color: #3a5ccc;
   font-size: 15px;
