@@ -41,9 +41,9 @@
            
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="#">Sign in</a></li>
-					 <li><a href="#">Reservations</a></li>
+					 <li><a href="#">My Reservations</a></li>
                     <li><a href="#">About us</a></li>
                     <li><a href="#">Logout</a></li>
                 </ul>
@@ -84,7 +84,7 @@
 
 
 
-<a href="{% url 'addvideo' %}" class="myButton" id = "cat1">Photography</a>
+<a href="{% url 'displaycustomer' %}" class="myButton" id = "cat1">Photography</a>
 <a href="{% url 'displayall' %}" input type = "button" class="myButton" id = "cat2">Videography</a>
 <a href="{% url 'Adminlogin' %}" class="myButton" id = "cat3">Decorations</a>
 <a href="{% url 'addvideo' %}" class="myButton" id = "cat4">Music Band</a>
