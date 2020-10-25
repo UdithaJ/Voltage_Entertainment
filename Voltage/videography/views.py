@@ -256,6 +256,7 @@ def submitEvent(request):
           return render(request,'main_reservation_page.html',context=context)
     
     
+    
 def CancelEvent(request,id):
     event = events.objects.filter(Event_ID = id)
     event.delete()

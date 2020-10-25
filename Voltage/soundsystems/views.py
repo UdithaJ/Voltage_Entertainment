@@ -120,26 +120,25 @@ def bookSoundPackages(request):
            mydate = date[0:10];
            converted_date = datetime.datetime.strptime(mydate, "%Y-%m-%d").date()
          
-           if converted_date < datetime.datetime.now().date():
-            messages.warning(request, 'Please Enter a valid Date')
-            return redirect(request.META.get('HTTP_REFERER')) 
-           else: 
+           #if converted_date < datetime.datetime.now().date():
+            #messages.warning(request, 'Please Enter a valid Date')
+            #return redirect(request.META.get('HTTP_REFERER')) 
+           #else: 
              
-               if reservations.objects.filter(S_Time__date  = converted_date, Resources_ID = sound ):
+               #if reservations.objects.filter(S_Time__date  = converted_date, Resources_ID = sound ):
                    
-                 messages.warning(request, 'Please check availability before make a reservation')
-                 return redirect(request.META.get('HTTP_REFERER')) 
-            
-               else:
-                 soundbook.save()
-                 return render(request, 'main_reservation_page.html')
+                 #messages.warning(request, 'Please check availability before make a reservation')
+                 #return redirect(request.META.get('HTTP_REFERER')) 
+   
+           soundbook.save()
+           return render(request, 'main_reservation_page.html')
         
             
      else:
                 messages.warning(request, 'Please Fill the required Fields!')
                 return redirect(request.META.get('HTTP_REFERER'))
  else:
-      return redirect(display_customers)
+        return redirect(display_customers)
 
 
  

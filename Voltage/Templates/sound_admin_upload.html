@@ -121,7 +121,7 @@
            
             <div id="mainListDiv" class="main_list">
                 <ul class="navlinks">
-                    <li><a href="#">Home</a></li>
+                    <li><a href="{% url 'home' %}">Home</a></li>
                     <li><a href="#">Sign in</a></li>
 					 <li><a href="#">Reservations</a></li>
                     <li><a href="#">About us</a></li>
@@ -230,13 +230,6 @@
 
 
 
-
-					<div class="upload">
-
-						<span><i class="fas fa-cloud-upload-alt mr-2"></i>Choose files</span>
-						<input type="file" onchange="readURL(this);" id= "packageImg" name = "packageImg" >
-
-					</div>
 
 
 

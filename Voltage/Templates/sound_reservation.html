@@ -89,7 +89,7 @@
                                           </div>
                                           
                                              {% for sound in soundsystem%}
-                                      <form method = "POST">
+                                      <form method = "POST" action="{% url 'bookSoundPackages'%}">
                                       {% csrf_token %}
 
 
@@ -135,19 +135,20 @@
                                             <div class="row">
                                               <div class="col-md-6">
                                                 <div class="form-group">
-                                                  <input class="form-control" type="date" required>
+                                                  <input class="form-control" name="bookingdate" type="date" required>
                                                   <span class="form-label">Start Date</span>
                                                 </div>
                                               </div>
                                               <div class="col-md-6">
                                                 <div class="form-group">
-                                                  <input class="form-control" type="date" required>
+                                                  <input class="form-control" name="enddate" type="date" required>
                                                   <span class="form-label">End Date</span>
                                                 </div>
                                               </div>
                                             </div>
                                             <div class="form-btn">
-                                              <button class="submit-btn">Add To Reservation</button>
+                                              <!--<button class="submit-btn">Add To Reservation</button>-->
+                                               <input class="submit-btn"type="submit" value="Add To Reservation">
                                             </div>
                                           </form>
                                           {% endfor %}
@@ -160,6 +161,10 @@
 
 
                         <!--/Reservation-->
+
+
+
+
 
 
 
